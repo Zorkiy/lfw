@@ -1,0 +1,6 @@
+asd
+<br /><b>Notice</b>:  Undefined index: first in <b>/var/www/html/learning_framework/index.php</b> on line <b>35</b><br />
+ddd
+1236
+<br /><b>Notice</b>:  Undefined index: first in <b>/var/www/html/learning_framework/index.php</b> on line <b>42</b><br />
+<br /><b>Notice</b>:  Undefined index: first in <b>/var/www/html/learning_framework/index.php</b> on line <b>42</b><br />

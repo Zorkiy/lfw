@@ -1,0 +1,27 @@
+@charset "windows-1251";
+
+.readmenu{border-top-style: solid; border-width: 1px; border-color: #6B8699; border-left-style: solid}
+
+div.nametemaread{float: left; margin: 0px}
+.nametemaread{padding: 3px; padding-left: 20px; font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: #000000; font-weight: bold; font-style: oblique}
+.tablenametemaread{height: 70; padding: 10px; background-color: #FFFFFF}
+div.nextback{float: right; padding-right: 20px}
+.posttext{font-size: 12px; color: #000000; line-height: 16px}
+.postbody{background-color: #F8F8F8}
+.postbodynew{background-color: #FFFFFF}
+
+p.linkback{text-align: left; font-size: 11px; margin: 0px; background-image: url(images/backpage.gif); background-repeat: no-repeat; 
+ background-position: left;  margin-left: 20px; padding-left: 20px;}
+a.linkback{color: #21353D} 
+p.linknext{text-align: left; font-size: 11px; margin: 0px; background-image: url(images/nextpage.gif); background-repeat: no-repeat; 
+ background-position: left; margin-left: 60px; padding-left: 20px; color: #E3D41B}
+a.linknext{color: #21353D} 
+.fonposts{background-color: #D1D1D1;}
+.infopost{font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #969696}
+.postmenu{font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #969696; text-align: right}
+
+.codeblock{background-color: #E3E5E3; border-style: solid; border-width: 1px;
+	border-color: #B8C1B7; padding: 10px; padding-left: 35px; 
+	background-image: url(images/code2.gif); background-repeat: repeat-y; font-size: 12px}
+.attachfile{float: right;}
+.toauthor{font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #969696;}

@@ -1,0 +1,3 @@
+0  Динамики
+0 udb-ports
+0 Процессоры intel core i3

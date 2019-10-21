@@ -1,0 +1,137 @@
+<?php
+  ////////////////////////////////////////////////////////////
+  // Форум - LiteForum
+  // 2003-2008 (C) IT-студия SoftTime (http://www.softtime.ru)
+  // Поддержка: http://www.softtime.ru/forum/
+  // Симдянов И.В. (simdyanov@softtime.ru)
+  // Кузнецов М.В. (kuznetsov@softtime.ru)
+  // Голышев С.В. (softtime@softtime.ru)
+  // Бешкенадзе А.Г. (akira_bad@mail.ru)
+  ////////////////////////////////////////////////////////////
+  // Выставляем уровень обработки ошибок 
+  // (http://www.softtime.ru/info/articlephp.php?id_article=23)
+  error_reporting(E_ALL & ~E_NOTICE); 
+
+  // Подключаем SoftTime FrameWork
+  require_once("../config/class.config.forum.php");
+  // Устанавливаем соединение с базой данных
+  require_once("config.php");
+  // Функции для работы со временем
+  require_once("../utils/utils.time.php");
+  // Функции для работы с сообщениями
+  require_once("../utils/utils.posts.php");
+  // Настройки форума
+  require_once("../utils/utils.settings.php");
+  // Функции для работы с пользователями
+  require_once("../utils/utils.users.php");
+  // Функция для работы с файлами
+  require_once("../utils/utils.files.php");
+
+  try
+  {
+    // Формируем шапку XML-файла
+    $xml = '<?xml version="1.0" encoding="windows-1251"?>'.
+           '<rss version="2.0" xmlns="http://backend.userland.com/rss2" xmlns:yandex="http://news.yandex.ru">'.
+           '<channel>'.
+           '<title>Форум PHP портала SoftTime</title>'.
+           '<link>http://www.softtime.ru/forum/</link>'.
+           '<description>Форум PHP портала SoftTime поддерживается авторами нескольких книг по PHP</description>';
+
+    // Извлекаем все открытые новости портала
+    $query = "SELECT id_theme,
+                     author,
+                     name,
+                     DATE_FORMAT(`time`, '%a, %e %b %Y %T') AS datetime,
+                     hide,
+                     id_forum
+              FROM $tbl_themes
+              WHERE hide = 'show'
+              ORDER BY `time` DESC
+              LIMIT 20";
+    $nws = mysql_query($query);
+    if(!$nws)
+    {
+      throw new ExceptionMySQL(mysql_error(), 
+                               $query,
+                              "Ошибка выборки новостных позиций");
+    }
+    if(mysql_num_rows($nws))
+    {
+      while($news = mysql_fetch_array($nws))
+      {
+        // Избавляемся от неуместных символов вроде кавычек-ёлочек
+        $news['name'] = str_replace('«','"',$news['name']);
+        $news['name'] = str_replace('»','"',$news['name']);
+        $news['name'] = htmlspecialchars($news['name']);
+        $post = $news['post'];
+
+        // Извлекаем первое сообщение
+        $query = "SELECT name FROM $tbl_posts
+                  WHERE id_post = 0 AND id_theme = $news[id_theme]
+                  LIMIT 1";
+        $prt = mysql_query($query);
+        if(!$prt)
+        {
+          throw new ExceptionMySQL(mysql_error(), 
+                                   $query,
+                                  "Ошибка выборки новостных позиций");
+        }
+        if(mysql_num_rows($prt)) $post = mysql_result($prt,0);
+        preg_match('|^(([^\s]+[\s]+){20})|i', $post, $out);
+        if(!empty($out[1])) $post = trim($out[1])."...";
+        $post = str_replace('<','"',$post);
+        $post = str_replace('>','"',$post);
+        $post = htmlspecialchars($post);
+  
+        // Выясняем название раздела
+        $query = "SELECT name FROM $tbl_forums 
+                  WHERE id_forum = $news[id_forum]";
+        $prt = mysql_query($query);
+        if(!$prt)
+        {
+          throw new ExceptionMySQL(mysql_error(), 
+                                   $query,
+                                  "Ошибка выборки новостных позиций");
+        }
+        if(mysql_num_rows($prt)) $part = mysql_result($prt,0);
+  
+        preg_match('|^(([^\s]+[\s]+){20})|i', $post, $out);
+        if(!empty($out[1])) $post = trim($out[1])."...";
+        $post = str_replace('<','"',$post);
+        $post = str_replace('>','"',$post);
+        $post = htmlspecialchars($post);
+  
+        // Преобразуем время
+        $date = strtotime($news['datetime']);
+        $datetime = strftime("%r", $date);
+  
+        $path = substr($_SERVER['PHP_SELF'],0,strrpos($_SERVER['PHP_SELF'],"/"));
+        // Формируем новостные позиции
+        $xml .= '<item>'.
+              '<title>'.$news['name'].'</title>'.
+              '<link>http://'.$_SERVER['SERVER_NAME'].$path.'/read.php?id_forum='.$news['id_forum'].'&amp;id_theme='.$news['id_theme'].'</link>'.
+              '<description>'.$post.'</description>'.
+              '<category>'.$part.'</category>'.
+              '<pubDate>'.$news['datetime'].' '.date('O').'</pubDate>'.
+              '<author>'.$news['author'].'</author>'.
+              '</item>'.
+              '';
+      }
+    }
+    $xml .= '</channel>'.
+            '</rss>';
+  echo $xml;
+  }
+  catch(ExceptionObject $exc) 
+  {
+    require_once("exception_object_debug.php"); 
+  }
+  catch(ExceptionMySQL $exc)
+  {
+    require_once("exception_mysql_debug.php"); 
+  }
+  catch(ExceptionMember $exc)
+  {
+    require_once("exception_member_debug.php"); 
+  }
+?>?>

@@ -1,0 +1,40 @@
+
+
+body{background-color: #191919}
+
+p{font-family: font-family: Times New Roman, Times, Serif;  font-size: 14px; color: #E5E5E5}
+a{color: #FFFDE6}
+a:hover{color: #FFFFCC}
+.text{font-size: 14px; color: #2D2D2D; line-height: 20px; text-align: justify}
+.texthelp{font-size: 14px; color: #909090}
+.authorreg{font-size: 14px; padding-left: 10px; padding-right: 10px; color: #FFFFCC; font-weight: bold}
+a.authorreg{font-size: 14px; padding-left: 0px; padding-right: 0px; color: #FFFDE6; font-weight: bold}
+a.authorreg:hover{color: #FFFDB1}
+.author{font-size: 14px; padding-left: 10px; padding-right: 10px; color: #E5E6E5; font-style: normal}
+
+.button{background-color: #4C4C4C; font-size: 12px; color: #E1E1E1; padding: 1px; padding-left: 10px; padding-right: 10px}
+.codeblock{background-color: #FFFAD9; border-style: solid; border-width: 1px; border-top-width: 15px; 
+	border-color: #FFFFFF; border-top-color: #ACAA89; padding: 10px; padding-left: 35px; 
+	background-image: url(images/code2.gif); background-repeat: repeat-y; font-size: 12px}
+
+
+
+
+	
+
+
+
+
+
+
+
+
+	
+.tdnumberforum{border-top-style: solid; border-left-style: solid; border-width: 1px; 
+border-color: #9DD9ED}
+
+.newposttable{background-color: #330E0E; margin-top: 1px}
+
+.starttd{ width: 10px;}
+.nameforumtd{width: 60%; padding-left: 10px}
+.infotd{width: 65%; padding-top: 0px; padding-bottom: 0px}

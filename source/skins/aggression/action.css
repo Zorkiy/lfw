@@ -1,0 +1,35 @@
+@charset "windows-1251";
+
+.authortext{font-size: 14px; color: #CCFFFF; font-style: normal; font-weight: bold}
+.authorhide{color: #C4C4C4}
+.headerform{background-color: #6D0000; background-image: url(images/header.gif); background-repeat: repeat-x; height: 59px;
+	border-style: solid; border-width: 1px; border-color: #B13C39; border-top-color: #842C2A; border-bottom-width: 2px; border-bottom-color: #531C1B}
+.bodyform{background-color: #3A3A3A; background-image: url(images/paper2.gif); padding: 40px; padding-bottom: 10px; 
+	padding-top: 10px; border-style: solid; border-width: 1px; border-color: #757575; border-top-width: 0px; height: 200px}
+.toplineaction{background-color: #313131; background-image: url(images/fonactiontop.gif)}
+.bodyaction{background-color: #656565; background-image: url(images/fonbodyaction.gif);}
+.namepageaction{margin-top: 20px; color: #4B6367; font-size: 14px;}
+.nameaction{margin: 0px; font-size: 18px; text-align: center; color: #ffffff; font-weight: bold; padding-top:  5px}
+.lineaction{height: 25px; background-image: url(images/diz_line.gif); background-repeat: repeat-x;}
+.blockremark{border-style: solid; border-color: #404040; border-width: 1px; padding: 10px; width: 100%;
+	text-align: right; background-color: #212121; margin-left: 20px; margin-bottom: 10px; }
+.remark{border-style: solid; border-color: #5C5C5C; border-width: 1px; padding: 10px; width: 100%;
+	background-color: #212121; margin-left: 20px; margin-right: 20px; margin-bottom: 10px; }
+p.linkbackbig{font-size: 14px; margin: 0px; background-image: url(images/backpagecolor.gif); background-repeat: no-repeat; 
+ background-position: left;  margin-left: 10px; padding-left: 20px; margin-bottom: 15px}
+a.linkbackbig{color: #21353D} 
+.fieldname{font-weight: bold; font-size: 14px; color: #999999; padding-left: 20px}
+.input{background: #FFFDE6; background-color: #FFFDE6; font-size: 12px; font-family: Arial, Helvetica, sans-serif}
+.pic{font-size: 1px; margin: 0px; padding: 0px}
+.blockanswer{border-style: solid; border-width: 1px; border-color: #000000; width: 100%;
+	background-color: #252525; padding: 10px}
+.srchtable{border-top-style: solid; border-width: 2px; border-color: #9F3333; background-color: #292929}
+.tablen{border-top-style: solid; border-width: 0px; border-color: #9F3333; background-color: #292929}
+.trtablen{background-color: #474747}
+.tableheadern{background-color: #6F0707; border-bottom-style: solid; 
+border-bottom-width: 2px; border-bottom-color: #7F0F0F; text-align: center;
+	border-left-style: solid; border-left-width: 1px; border-left-color: #961212}
+.bottomtablen{background-color: #262626; height: 40px; border-top-style: solid; 
+border-top-width: 2px; border-bottom-style: solid; border-bottom-width: 1px; 
+border-left-width: 0px; border-top-color: #2A2A2A; border-bottom-color: #2E2E2E; padding-left: 20px; padding-top: 5px}
+.zagtext{font-size: 14px; font-weight: bold; margin-top: 15px; margin-bottom: 10px;}

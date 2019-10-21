@@ -1,0 +1,22 @@
+@charset "windows-1251";
+.readmenu{border-top-style: solid; border-width: 1px; border-color: #8C2D2D; }
+div.nametemaread{float: left; margin: 0px}
+.nametemaread{padding: 3px; padding-left: 20px; padding-bottom: 8px; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color: #FFFFFF; font-weight: bold; font-style: oblique}
+.tablenametemaread{height: 70; padding: 10px; background-color: #FFFFFF}
+div.nextback{float: right; padding-right: 20px}
+.posttext{font-size: 17px; color: #D5D5D5; line-height: 21px; padding-top: 5px}
+.postbody{background-color: #191919; border-top-style: solid; border-top-width: 1px; border-color: #494949}
+.postbodynew{background-color: #202020; border-top-style: solid; border-top-width: 1px; border-color: #3C3C3C }
+p.linkback{font-family: Arial, Helvetica, sans-serif; text-align: left; font-size: 13px; margin: 0px; background-image: url(images/backpage.gif); background-repeat: no-repeat; 
+ background-position: left;  margin-left: 20px; padding-left: 20px;}
+a.linkback{color: #FFFDE6} 
+p.linknext{font-family: Arial, Helvetica, sans-serif; text-align: left; font-size: 13px; margin: 0px; background-image: url(images/nextpage.gif); background-repeat: no-repeat; 
+ background-position: left; margin-left: 60px; padding-left: 20px; color: #E3D41B}
+a.linknext{color: #FFFDE6} 
+.fonposts{background-color: #0C0C0C;}
+.infopost{font-size: 14px; color: #A3A3A3; background-color: #2F2F2F; 
+border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #2A2A2A;
+border-top-style: solid; border-top-width: 5px; border-top-color: #343434;}
+.postmenu{font-size: 14px; color: #969696; text-align: right; padding-bottom: 20px}
+.toauthor{font-size: 14px; color: #A3A3A3;}
+.attachfile{float: right;}

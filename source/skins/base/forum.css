@@ -1,0 +1,16 @@
+@charset "windows-1251";
+
+body, table{font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+a{color: #19308C}
+a:hover{color: #010103}
+.text{font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #2D2D2D; line-height: 20px; text-align: justify}
+.texthelp{color: #5B5B5B; margin: 0px}
+.authorreg{font-size: 12px; padding-left: 10px; padding-right: 10px; color: #446343; font-weight: bold}
+a.authorreg{font-size: 12px; padding-left: 0px; padding-right: 0px; color: #446343; font-weight: bold}
+a.authorreg:hover{color: #182D0B;}
+.author{font-size: 12px; padding-left: 10px; padding-right: 10px; color: #446343; font-style: normal}
+.button{background-color: #D6E1E2; font-size: 11px; color: #264973; padding: 1px; padding-left: 10px; padding-right: 10px}
+.codeblock{background-color: #E3E5E3; border-style: solid; border-width: 1px;
+	border-color: #B8C1B7; padding: 10px; padding-left: 35px; 
+	background-image: url(images/code2.gif); background-repeat: repeat-y; font-size: 12px}
+
