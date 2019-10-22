@@ -5,38 +5,52 @@ $db = new DB();
 
 // Формирование html-формы
 try {
-   @$name = new FieldText( "name",
-                           "Имя",
-                           true,
-                           $_POST['name']);
+   @$name = new FieldText(
+      "name",
+      "Имя",
+      true,
+      $_POST['name']
+   );
 
-   @$pass = new FieldTextPassword(  "pass",
-                                    "Пароль",
-                                    true,
-                                    $_POST['pass']);
+   @$pass = new FieldTextPassword(
+      "pass",
+      "Пароль",
+      true,
+      $_POST['pass']
+   );
 
-   @$pass_again = new FieldTextPassword(  "pass_again",
-                                          "Повтор пароля",
-                                          true,
-                                          $_POST['pass_again']);
+   @$pass_again = new FieldTextPassword(
+      "pass_again",
+      "Повтор пароля",
+      true,
+      $_POST['pass_again']
+   );
 
-   @$email = new FieldTextEmail( "email",
-                                 "E-mail",
-                                 true,
-                                 $_POST['email']);
+   @$email = new FieldTextEmail(
+      "email",
+      "E-mail",
+      true,
+      $_POST['email']
+   );
 
-   @$about = new FieldTextarea( "about",
-                                 "О себе",
-                                 false,
-                                 $_POST['about']);
+   @$about = new FieldTextarea(
+      "about",
+      "О себе",
+      false,
+      $_POST['about']
+   );
 
-   @$form = new Form(array("name" => $name,
-                           "pass" => $pass,
-                           "pass_again" => $pass_again,
-                           "email" => $email,
-                           "about" => $about),
-                        "Добавить",
-                        "field");
+   @$form = new Form(
+      array(
+         "name" => $name,
+         "pass" => $pass,
+         "pass_again" => $pass_again,
+         "email" => $email,
+         "about" => $about
+      ),
+      "Добавить",
+      "field"
+   );
 
    // Обработчик HTML-формы
    if (!empty($_POST)) {

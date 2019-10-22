@@ -18,6 +18,27 @@ require_once("class/FieldTextEmail.php");
 require_once("class/FieldTextarea.php");
 require_once("class/FieldHidden.php");
 require_once("class/FieldHiddenInt.php");
+require_once("class/FieldCheckBox.php");
+require_once("class/FieldSelect.php");
+
+/**
+* Краткое описание
+* @param 
+* @return 
+*/
+function fileRtrim($fileFrom, $fileTo)
+{
+   $f1 = fopen($fileFrom, "r");
+   $f2 = fopen($fileTo, "a");
+
+   while (!feof($f1)) {
+      $buffer = fgets($f1, 4096);
+      fwrite($f2, rtrim($buffer, "\r\n"));
+   }
+
+   fclose($f1);
+   fclose($f2);
+}
 
 function p($arr) {
    echo "<pre style='color: blue; background-color: Gainsboro'>\n";
